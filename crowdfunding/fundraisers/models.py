@@ -19,7 +19,7 @@ class Pledge(models.Model):
     amount = models.IntegerField()
     comment = models.CharField(max_length=200)
     anonymous = models.BooleanField()
-    Fundraiser = models.ForeignKey(
+    fundraiser = models.ForeignKey(
         'Fundraiser',
         related_name='pledges',
         on_delete=models.CASCADE #once a fundraiser deleted, pledges will be deleted too; or fundraiser cannot be NIL .
