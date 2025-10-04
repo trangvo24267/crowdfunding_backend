@@ -1,33 +1,35 @@
 # Crowdfunding Back End
-{{ your name here }}
+{{ Trang Vo }}
 
 ## Planning:
 ### Concept/Name
-{{ Include a short description of your website concept here. }}
+- Name: Helping hands
+- Concept: The app is a crowdfunding platform specifically for support toward local elderly people.
+  The "Helping hands" campaign is the featured or launch campaign, but other users can create their own fundraisers.
 
 ### Intended Audience/User Stories
-{{ Who are your intended audience? How will they use the website? }}
+The intended audience of this app are divided into three key segments: project creators, donors, and the broader Community.
 
 ### Front End Pages/Functionality
-- Home Page
-    - Featured kickstarters
-- Search page
-    - Search specific fundraiser
--Create New Fundraiser Page
-    - Form with fundraiser details
-    - Ability to submit
-    - Nice error pages for validation
+- Homepage: Featured Fundraisers
+    - Hero section with call to action
+    - Featured fundraisers with progress bars and donation buttons
+    - Overview of the platform's mission and impact
 
-- {{ A page on the front end }}
-    - {{ A list of dot-points showing functionality is available on this page }}
-    - {{ etc }}
-    - {{ etc }}
-- {{ A second page available on the front end }}
-    - {{ Another list of dot-points showing functionality }}
-    - {{ etc }}
-- Display Fundraiser
-    - Shows all information about fundraiser
-    - Show all pledges made so far
+- All Fundraisers Page 
+    - A list of all available Fundraisers
+    - Filter options by tasks (e.g.)
+    - Ability to sort projects by funding progress or creation date
+
+- Create New Fundraiser Page
+    - Form with campaign details (name, species, description, goal) 
+    - Ability to submit new campaign details to the database
+    - User validation to ensure all fields are filled correctly
+
+- A Specific  Fundraiser Details Page 
+    - etailed information about a single fundraiser
+    - Shows progress towards the fundraising goal 
+    - Option to make a donation
 ### API Spec
 {{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
 

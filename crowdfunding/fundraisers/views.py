@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
 from .models import Fundraiser, Pledge
-from .serializers import FundraiserSerializer, PledgeSerializer, FundraiserDetailSerializer
+from .serializers import FundraiserSerializer, PledgeSerializer, FundraiserDetailSerializer, PledgeDetailSerializer
 from .permissions import IsOwnerOrReadOnly #referring to "permissions.py" file
 
 class FundraiserList(APIView):
@@ -81,6 +81,43 @@ class PledgeList (APIView):
                 serializer.data, #getting instant feedback
                 status=status.HTTP_201_CREATED
             )
+        else:
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+class PledgeDetail(APIView):
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+    ]
+
+    def get_object(self, pk):
+        try: #setting up what happens if the codes fail
+            pledge = Pledge.objects.get(pk=pk)
+            self.check_object_permissions(self.request, pledge)
+            return pledge
+        except Pledge.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk):
+        print(pk)
+        print("fund detail serial")
+        pledge = self.get_object(pk)
+        serializer = PledgeDetailSerializer(pledge)
+        return Response(serializer.data)
+
+    def put(self, request, pk):
+        print(f"updating: {pk}")
+        pledge = self.get_object(pk) #giving the instance to the "serializers"-instance
+        serializer = PledgeDetailSerializer(
+            instance=pledge,
+            data=request.data,
+            partial=True
+        )
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
         else:
             return Response(
                 serializer.errors,
