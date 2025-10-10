@@ -5,36 +5,41 @@
 ### Concept/Name
 - Name: Helping hands
 - Concept: The app is a crowdfunding platform specifically for support toward local elderly people.
-  The "Helping hands" campaign is the featured or launch campaign, but other users can create their own fundraisers.
+  The "Helping hands" campaign is to match elderly needing help with volunteers committing their time & skills (minutes pledged to certain tasks required)
 
 ### Intended Audience/User Stories
 The intended audience of this app are: elderly/local communities seeking help around the house (fundraising), local volunteers with skills to help out (pledging).
 
 ### Front End Pages/Functionality
 - Home Page
-    - Featured kickstarters
-- Search page
-    - Search specific fundraiser
--Create New Fundraiser Page
-    - Form with fundraiser details
-    - Ability to submit
-    - Nice error pages for validation
+    - Image of local areas including community citizens including all ages participating into communial activities,
+    - "All projects/tasks/fundraisers" page to show active & past tasks/fundraisers in local areas,
+    - Section "Get involved" including: (1) "I need help" section (for elderly/local communities on behalf seeking help), (2) "I can help" section (for local volunteers with time & relevant skills)
+    - 
+- "All projects/tasks/fundraisers" page:
+  - Search function to search for specific items,
+  - Show active/current tasks including status (eg. partly/fully pledged) & past tasks,
+  - Section for testimonies from both elderly (or their supports) & volunteers on their experiences,
+  - No login required for viewing.
+  - Create a new project/task (login required being fundraisers/project owners (eg. elderly or their community supports)-under "I need help" section),
+  - Update a project/task (login required being fundraisers/project owners (eg. elderly or their community supports)),
+  - Creat a pledge to a certain project/task (login required being users (local volunteers)-under "I can help" section),
+  - Update a pledge (login required being users (local volunteers)).
 
-- {{ A page on the front end }}
-    - {{ A list of dot-points showing functionality is available on this page }}
-    - {{ etc }}
-    - {{ etc }}
-- {{ A second page available on the front end }}
-    - {{ Another list of dot-points showing functionality }}
-    - {{ etc }}
-- Display Fundraiser
+- Users' detail page:
+(1) Display Fundraiser/project owners' details (elderly or their supports)
     - Shows all information about fundraiser
-    - Show all pledges made so far
+    - Show all pledges made so far to certain tasks
+    - Update details on their tasks (login required)
+
+(2) Display users' details (local volunteers)
+    - Shows all information about fundraiser
+    - Show all pledges made so far to certain tasks
+    - Update details on their pledges (login required)
+
 
 ### API Spec
 {{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
-
-It might look messy here in the PDF, but once it's rendered it looks very neat! 
 
 It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
 
@@ -94,4 +99,14 @@ Please include the following in your readme doc:
 - [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 - [ ] A screenshot of Insomnia, demonstrating a token being returned.
 - [ ] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
-- [ ] Your refined API specification and Database Schema - ![](./database.drawio.svg)
+- [x] Your refined API specification and Database Schema
+
+![Creating a new user](image.png)
+
+![Get a token](image-1.png)
+
+![Create a new fundraiser](image-2.png)
+
+![Fetch all fundraisers](image-3.png)
+
+![Create a pledge](image-4.png)
