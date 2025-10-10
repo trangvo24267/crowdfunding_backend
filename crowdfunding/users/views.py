@@ -44,7 +44,7 @@ class CustomUserDetail(APIView):
         print(f"updating: {pk}")
         pledge = self.get_object(pk) #giving the instance to the "serializers"-instance
         serializer = CustomUserSerializer(
-            instance=CustomUser,
+            instance=user,
             data=request.data,
             partial=True
         )
