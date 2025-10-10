@@ -39,8 +39,26 @@ class CustomUserDetail(APIView):
         user = self.get_object(pk)
         serializer = CustomUserSerializer(user) #we donot need many anymore, only unique instance is required
         return Response(serializer.data)
+    
+    def put(self, request, pk):
+        print(f"updating: {pk}")
+        pledge = self.get_object(pk) #giving the instance to the "serializers"-instance
+        serializer = CustomUserSerializer(
+            instance=CustomUser,
+            data=request.data,
+            partial=True
+        )
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+            )   
 
 class  CustomAuthToken(ObtainAuthToken):
+
     def post(self, request, *args, **kwargs): #using args, kwargs
         serializer = self.serializer_class(
             data=request.data,

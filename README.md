@@ -55,7 +55,7 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 |/fundraisers/| Update one fundraiser               | GET         | N/A             |              200      | None                         |
 |/fundraisers/| Fetch all fundraisers               | GET         | N/A             |              200      |                              |
 | /pledges/   | Create a new pledge for a fundraiser| POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
-| /pledges/   | Fetch one pledge                    | GET         | N/A             |              200      | None                         |
+| /pledges/   | Fetch one pledge                    | GET         | N/A             |              200      | Must log in as users         |
 | /pledges/   | Update one pledge                   | POST        | JSON Payload    |              201      | Any logged in users          |
 | /pledges/   | Fetch all pledges                   | GET         | N/A             |              200      |                              |
 
@@ -110,3 +110,12 @@ Please include the following in your readme doc:
 ![Fetch all fundraisers](image-3.png)
 
 ![Create a pledge](image-4.png)
+
+![Fetch an individual fundraiser](image-5.png)
+
+![Fetch all pledges](image-6.png)
+
+![Fetch one pledge](image-7.png)
+
+![Update fundraiser](image-8.png)
+
