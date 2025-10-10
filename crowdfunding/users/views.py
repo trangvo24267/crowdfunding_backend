@@ -42,7 +42,7 @@ class CustomUserDetail(APIView):
     
     def put(self, request, pk):
         print(f"updating: {pk}")
-        pledge = self.get_object(pk) #giving the instance to the "serializers"-instance
+        user = self.get_object(pk) #giving the instance to the "serializers"-instance
         serializer = CustomUserSerializer(
             instance=user,
             data=request.data,
