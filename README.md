@@ -45,19 +45,19 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 
 | URL         |Purpose                              | HTTP Method | Request Body    | Success Response Code | Authentication/Authorisation |
 | ---         | -----------                         | -------     | ------------    | --------------------- | ---------------------------- |
-| /users/     | Create a new user                   | POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
+| /users/     | Create a new user                   | POST        | JSON payload #{fundraiser_id"}|201      | None                         |
 | /users/     | Fetch one user                      | GET         | N/A             |              200      | None                         |
 | /users/     | Update one user                     | PUT         | JSON Payload    |              201      | Any logged in users          |
-| /users/     | Fetch all users                     | GET         | N/A             |              200      |                              |
+| /users/     | Fetch all users                     | GET         | N/A             |              200      | None                         |
 |/api-token-auth/| Get user's token                 | POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
 |/fundraisers/| Create a new fundraiser             | POST        | JSON Payload    |              201      | Any logged in users          |         
 |/fundraisers/| Fetch one fundraiser                | GET         | N/A             |              200      | None                         |
-|/fundraisers/| Update one fundraiser               | GET         | N/A             |              200      | None                         |
+|/fundraisers/| Update one fundraiser               | PUT         | N/A             |              200      | Any logged in users          |
 |/fundraisers/| Fetch all fundraisers               | GET         | N/A             |              200      |                              |
 | /pledges/   | Create a new pledge for a fundraiser| POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
-| /pledges/   | Fetch one pledge                    | GET         | N/A             |              200      | Must log in as users         |
-| /pledges/   | Update one pledge                   | POST        | JSON Payload    |              201      | Any logged in users          |
-| /pledges/   | Fetch all pledges                   | GET         | N/A             |              200      |                              |
+| /pledges/   | Fetch one pledge                    | GET         | N/A             |              200      | Any logged in users          |
+| /pledges/   | Update one pledge                   | PUT         | JSON Payload    |              201      | Any logged in users          |
+| /pledges/   | Fetch all pledges                   | GET         | N/A             |              200      | None                         |
 
 ### DB Schema
 ![](  ./database.drawio.svg)
@@ -86,28 +86,46 @@ Your crowdfunding project must:
   - [x] The supporter/user (i.e. who created the pledge)
   - [x] Whether the pledge is anonymous or not
   - [x] A comment to go along with the pledge
-- [ ] Implement suitable update/delete functionality, e.g. should a fundraiser owner be allowed to update its description?
-- [ ] Implement suitable permissions, e.g. who is allowed to delete a pledge?
-- [ ] Return the relevant status codes for both successful and unsuccessful requests to the API.
-- [ ] Handle failed requests gracefully (e.g. you should have a custom 404 page rather than the default error page).
-- [ ] Use Token Authentication, including an endpoint to obtain a token along with the current user's details.
-- [ ] Implement responsive design.
+- [x] Implement suitable update/delete functionality, e.g. should a fundraiser owner be allowed to update its description?
+- [x] Implement suitable permissions, e.g. who is allowed to delete a pledge?
+- [x] Return the relevant status codes for both successful and unsuccessful requests to the API.
+- [x] Handle failed requests gracefully (e.g. you should have a custom 404 page rather than the default error page).
+- [x] Use Token Authentication, including an endpoint to obtain a token along with the current user's details.
+- [x] Implement responsive design.
 
 Please include the following in your readme doc:
 - [x] A link to the deployed project - https://crowdfunding-backend-trangvo-7661bbaf5a0b.herokuapp.com/fundraisers/
-- [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a token being returned.
-- [ ] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
+- [x] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
+- ![Fetch all fundraisers](image-3.png)
+- [x] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
+- ![Create a new fundraiser](image-2.png)
+- [x] A screenshot of Insomnia, demonstrating a token being returned.
+- ![Get a token](image-1.png)
+- [x] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
+
+1. Registering a new user
+  Step 1
+  Ensure the HTTP address applied - with "/users" at the end of the address,
+  Step 2
+  Change the method to "POST"
+  Step 3
+  Change the data type to "JSON" & fill out applicable elements in the body
+  Step 4
+  Once hapy, click SEND - a new user is now created.
+
+1. Creating a fundraiser
+    Step 1
+  Ensure the HTTP address applied - with "/fundraisers" at the end of the address,
+  Step 2
+  Change the method to "POST"
+  Step 3
+  Change the data type to "JSON" & fill out applicable elements in the body
+  Step 4
+  Once hapy, click SEND - a new fundraiser is now created.
+
 - [x] Your refined API specification and Database Schema
 
 ![Creating a new user](image.png)
-
-![Get a token](image-1.png)
-
-![Create a new fundraiser](image-2.png)
-
-![Fetch all fundraisers](image-3.png)
 
 ![Create a pledge](image-4.png)
 
@@ -119,3 +137,6 @@ Please include the following in your readme doc:
 
 ![Update fundraiser](image-8.png)
 
+![Update a user](image-9.png)
+
+![Fetch a user](image-10.png)
