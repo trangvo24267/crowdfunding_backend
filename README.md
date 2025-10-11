@@ -47,16 +47,16 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 | ---         | -----------                         | -------     | ------------    | --------------------- | ---------------------------- |
 | /users/     | Create a new user                   | POST        | JSON payload #{fundraiser_id"}|201      | None                         |
 | /users/     | Fetch one user                      | GET         | N/A             |              200      | None                         |
-| /users/     | Update one user                     | PUT         | JSON Payload    |              201      | Any logged in users          |
+| /users/     | Update one user                     | PUT         | JSON Payload    |              200      | Any logged in users          |
 | /users/     | Fetch all users                     | GET         | N/A             |              200      | None                         |
-|/api-token-auth/| Get user's token                 | POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
+|/api-token-auth/| Get user's token                 | POST        | JSON payload #{fundraiser_id"}|200      | Any logged in users          |
 |/fundraisers/| Create a new fundraiser             | POST        | JSON Payload    |              201      | Any logged in users          |         
 |/fundraisers/| Fetch one fundraiser                | GET         | N/A             |              200      | None                         |
-|/fundraisers/| Update one fundraiser               | PUT         | N/A             |              200      | Any logged in users          |
+|/fundraisers/| Update one fundraiser               | PUT         | JSON payload    |              200      | Any logged in users          |
 |/fundraisers/| Fetch all fundraisers               | GET         | N/A             |              200      |                              |
 | /pledges/   | Create a new pledge for a fundraiser| POST        | JSON payload #{fundraiser_id"}|201      | Any logged in users          |
 | /pledges/   | Fetch one pledge                    | GET         | N/A             |              200      | Any logged in users          |
-| /pledges/   | Update one pledge                   | PUT         | JSON Payload    |              201      | Any logged in users          |
+| /pledges/   | Update one pledge                   | PUT         | JSON Payload    |              200      | Any logged in users          |
 | /pledges/   | Fetch all pledges                   | GET         | N/A             |              200      | None                         |
 
 ### DB Schema
